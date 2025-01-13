@@ -13,7 +13,7 @@
  * @returns {Array} 새로운 todos 배열
  */
 function updateTodoTitle(todos, id, newTitle) {
-    const updatedToDos = todos.map(td => td.id === id ? {...todos, title: newTitle} : td);
+    const updatedToDos = todos.map(td => td.id === id ? {...td, title: newTitle} : td);
     return updatedToDos
 }
 
