@@ -12,7 +12,18 @@
  * @param {string} title
  * @returns {Array} 새로운 todos 배열
  */
-function createTodo(todos, title) {}
+function createTodo(todos, title) {
+    // 고유 id 만들기
+    const maxVal = Math.max(...todos.map(td => td.id));
+    const newId = maxVal + 1;
+    const newToDo = {
+        id: newId,
+        title: title,
+        completed: false
+    };
+
+    return [...todos, newToDo];
+}
 
 // export 수정 불가
 export { createTodo };
