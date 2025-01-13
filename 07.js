@@ -15,14 +15,13 @@ async function filterTodosByKeyword(keyword) {
     try{
         const response = await fetch('https://jsonplaceholder.typicode.com/todos');
         const todos = await response.json();
-        
+
         const newArr = todos.filter(todo => todo.title.toLowerCase().includes(keyword.toLowerCase()));
         console.log(newArr);
-        return newArr === undefined ? [] : newArr;
+        return newArr
     }
     catch(err){
         console.error('error: ', err);
-        return [];
     }
 }
 
